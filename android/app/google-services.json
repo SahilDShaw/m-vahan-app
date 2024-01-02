@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1008583582556",
+    "project_id": "nic-intern-app",
+    "storage_bucket": "nic-intern-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1008583582556:android:7d7db19c1e59ef76f41799",
+        "android_client_info": {
+          "package_name": "com.example.qr_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBy-RgqJcg3LY6i1Jq3K5nDd345R1bnas0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
