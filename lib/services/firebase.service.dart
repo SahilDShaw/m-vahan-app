@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:qr_app/models/pdf.model.dart';
+
+import '../models/pdf.model.dart';
 
 class FirebaseProvider extends ChangeNotifier {
   final _db = FirebaseFirestore.instance;
