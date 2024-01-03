@@ -1,0 +1,7 @@
+[
+{
+  "directory": "C:/Users/Sahil2/Documents/GitHub/qr-app/android/app/.cxx/Debug/3w2l5r45/x86",
+  "command": "C:\\Users\\Sahil2\\AppData\\Local\\Android\\Sdk\\ndk\\23.1.7779620\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=i686-none-linux-android21 --gcc-toolchain=C:/Users/Sahil2/AppData/Local/Android/Sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/Sahil2/AppData/Local/Android/Sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dapi_util_EXPORTS -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -o CMakeFiles\\api_util.dir\\C_\\Users\\Sahil2\\Documents\\GitHub\\qr-app\\ios\\Classes\\api_util.cpp.o -c C:\\Users\\Sahil2\\Documents\\GitHub\\qr-app\\ios\\Classes\\api_util.cpp",
+  "file": "C:\\Users\\Sahil2\\Documents\\GitHub\\qr-app\\ios\\Classes\\api_util.cpp"
+}
+]

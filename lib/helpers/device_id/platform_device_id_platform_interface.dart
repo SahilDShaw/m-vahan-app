@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/services.dart';
-
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 const MethodChannel _channel = MethodChannel('com.aniworks.flutter/lottery_app');

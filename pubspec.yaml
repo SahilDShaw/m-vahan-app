@@ -27,6 +27,8 @@ dependencies:
   pdf: ^3.10.7
   device_info_plus: ^9.1.1
   flutter_svg: ^2.0.9
+  ffi: ^2.1.0
+  plugin_platform_interface: ^2.1.7
 
 
 dev_dependencies:

@@ -7,6 +7,7 @@ import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'package:encrypt/encrypt.dart' as encrypt;
 
 import 'generate_pdf.screen.dart';
+import '../api/secure_string.api.dart';
 import '../models/qr_scan_result.model.dart';
 
 class QRScannerScreen extends StatefulWidget {
@@ -19,27 +20,35 @@ class QRScannerScreen extends StatefulWidget {
 }
 
 class _QRScannerScreenState extends State<QRScannerScreen> {
-  final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
-  QRViewController? controller;
+  final GlobalKey _qrKey = GlobalKey(debugLabel: 'QR');
+  QRViewController? _controller;
+  late String _keyStr;
 
+  @override
+  void initState() {
+    super.initState();
+
+    // encryption key
+    _keyStr = SecureStringAPI.getFernetKey();
+  }
+
+  // scanning for QR and if found, decrypting the plain text
+  // to see for any valid data
   void _onQrViewCreated(QRViewController qrController) {
-    controller = qrController;
+    _controller = qrController;
     qrController.scannedDataStream.listen((scanData) async {
       try {
         // string from QR
-        String plainText = scanData.code.toString();
-
-        // encryption key
-        const keyStr = 'HelloWorldHelloWorldHelloWorldHe';
+        String qrPlainText = scanData.code.toString();
 
         // encrypter
-        final keyFernet = encrypt.Key.fromUtf8(keyStr);
+        final keyFernet = encrypt.Key.fromUtf8(_keyStr);
         final fernet = encrypt.Fernet(keyFernet);
         final encrypterFernet = encrypt.Encrypter(fernet);
 
         // string decryption
         String decrypted = encrypterFernet.decrypt(
-          encrypt.Encrypted.fromBase64(plainText),
+          encrypt.Encrypted.fromBase64(qrPlainText),
         );
         log('Decrypted String: $decrypted');
 
@@ -67,7 +76,7 @@ class _QRScannerScreenState extends State<QRScannerScreen> {
   @override
   void dispose() {
     super.dispose();
-    controller!.dispose();
+    _controller!.dispose();
   }
 
   // in order to get hot reload to work we need to pause the camera
@@ -76,9 +85,9 @@ class _QRScannerScreenState extends State<QRScannerScreen> {
   void reassemble() {
     super.reassemble();
     if (Platform.isAndroid) {
-      controller!.pauseCamera();
+      _controller!.pauseCamera();
     } else if (Platform.isIOS) {
-      controller!.resumeCamera();
+      _controller!.resumeCamera();
     }
   }
 
@@ -93,7 +102,7 @@ class _QRScannerScreenState extends State<QRScannerScreen> {
           Expanded(
             flex: 5,
             child: QRView(
-              key: qrKey,
+              key: _qrKey,
               onQRViewCreated: _onQrViewCreated,
             ),
           ),
