@@ -25,6 +25,8 @@ dependencies:
   pointycastle: ^3.7.3
   intl: ^0.19.0
   pdf: ^3.10.7
+  device_info_plus: ^9.1.1
+  flutter_svg: ^2.0.9
 
 
 dev_dependencies:

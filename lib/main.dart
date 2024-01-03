@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
 
+import 'screens/sign_in.screen.dart';
 import 'firebase_options.dart';
 import 'routes/routes.dart';
-import 'screens/home.screen.dart';
 import 'services/firebase.service.dart';
 
 Future<void> main() async {
@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: const HomeScreen(),
+        home: const SignInScreen(),
         routes: routes,
       ),
     );
