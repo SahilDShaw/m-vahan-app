@@ -1,3 +1,5 @@
 # ninja log v5
 1	74	7259699063595839	CMakeFiles/api_util.dir/C_/Users/Sahil2/Documents/GitHub/qr-app/ios/Classes/api_util.cpp.o	76cb430d78267310
 76	214	7259699064942608	C:/Users/Sahil2/Documents/GitHub/qr-app/build/app/intermediates/cxx/Debug/391n5w70/obj/x86_64/libapi_util.so	92e7f6dad9dec61e
+2	73	7259762415610184	CMakeFiles/api_util.dir/C_/Users/Sahil2/Documents/GitHub/qr-app/ios/Classes/api_util.cpp.o	76cb430d78267310
+74	200	7259762416836873	C:/Users/Sahil2/Documents/GitHub/qr-app/build/app/intermediates/cxx/Debug/391n5w70/obj/x86_64/libapi_util.so	92e7f6dad9dec61e

@@ -1,5 +1,7 @@
 import 'dart:convert';
+import 'dart:io';
 import 'dart:math';
+// import 'dart:developer' as dev;
 
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -24,14 +26,44 @@ class GeneratePDFScreen extends StatefulWidget {
 }
 
 class _GeneratePDFScreenState extends State<GeneratePDFScreen> {
-  late Map<String, String> displayData;
+  late Map<String, String> _displayData;
 
   PDF? _pdfFile;
+
+  @override
+  void initState() {
+    super.initState();
+
+    if (widget.qrResult.qrType == QRType.driver) {
+      DriverData info = widget.qrResult.data;
+      _displayData = {
+        'DL No.': info.dlNo,
+        'Name': info.name,
+        'Address': info.address,
+        'DOB': DateFormat('dd-MM-yyyy').format(info.dob),
+      };
+    } else if (widget.qrResult.qrType == QRType.vehicle) {
+      VehicleData info = widget.qrResult.data;
+      _displayData = {
+        'Vehicle No.': info.vehicleNo,
+        'Manufacturer': info.manufacturer,
+        'Model': info.model,
+        'Variant': info.variant,
+        'Age': '${info.age.toString()} yrs',
+        'Kms. Driven': '${info.kmsDriven.toString()} kms',
+        'Registration City': info.registrationCity,
+      };
+    } else {
+      _displayData = {
+        'Error': widget.qrResult.data,
+      };
+    }
+  }
 
   // details widget builder
   List<Widget> _detailsWidgetBuilder() {
     List<Widget> widgetList = [];
-    displayData.forEach((key, value) {
+    _displayData.forEach((key, value) {
       widgetList.add(
         RichText(
           text: TextSpan(
@@ -63,9 +95,9 @@ class _GeneratePDFScreenState extends State<GeneratePDFScreen> {
   // generate and save pdf
   Future<PDF> _generatePDF() async {
     // generate pdf and save it locally
-    final pdfFile = await PdfApi.generatePDF(
+    File pdfFile = await PdfApi.generatePDF(
       qrType: widget.qrResult.qrType,
-      displayData: displayData,
+      displayData: _displayData,
     );
 
     // open the file just created
@@ -108,35 +140,6 @@ class _GeneratePDFScreenState extends State<GeneratePDFScreen> {
         content: Text(alertMessage),
       ),
     );
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    if (widget.qrResult.qrType == QRType.driver) {
-      DriverData info = widget.qrResult.data;
-      displayData = {
-        'DL No.': info.dlNo,
-        'Name': info.name,
-        'Address': info.address,
-        'DOB': DateFormat('dd-MM-yyyy').format(info.dob),
-      };
-    } else if (widget.qrResult.qrType == QRType.vehicle) {
-      VehicleData info = widget.qrResult.data;
-      displayData = {
-        'Vehicle No.': info.vehicleNo,
-        'Manufacturer': info.manufacturer,
-        'Model': info.model,
-        'Variant': info.variant,
-        'Age': '${info.age.toString()} yrs',
-        'Kms. Driven': '${info.kmsDriven.toString()} kms',
-        'Registration City': info.registrationCity,
-      };
-    } else {
-      displayData = {
-        'Error': widget.qrResult.data,
-      };
-    }
   }
 
   @override

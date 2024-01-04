@@ -29,7 +29,7 @@ class _QRScannerScreenState extends State<QRScannerScreen> {
     super.initState();
 
     // encryption key
-    _keyStr = SecureStringAPI.getFernetKey();
+    _keyStr = SecureStringApi.getFernetKey();
   }
 
   // scanning for QR and if found, decrypting the plain text

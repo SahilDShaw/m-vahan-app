@@ -1,6 +1,5 @@
 // ignore_for_file: camel_case_types
 
-import 'dart:developer';
 import 'dart:ffi';
 import 'dart:io';
 
@@ -11,18 +10,28 @@ final DynamicLibrary nativeLib = Platform.isAndroid ? DynamicLibrary.open("libap
 
 // C Functions signatures
 typedef _c_getFernetKey = Pointer<Utf8> Function();
+typedef _c_getCertificatePassword = Pointer<Utf8> Function();
 
 // Dart functions signatures
 typedef _dart_getFernetKey = Pointer<Utf8> Function();
+typedef _dart_getCertificatePassword = Pointer<Utf8> Function();
 
 // Create dart functions that invoke the C function
 final _getFernetKey = nativeLib.lookupFunction<_c_getFernetKey, _dart_getFernetKey>('get_fernet_key');
+final _getCertificatePassword =
+    nativeLib.lookupFunction<_c_getCertificatePassword, _dart_getCertificatePassword>('get_certificate_password');
 
-class SecureStringAPI {
+class SecureStringApi {
   static String getFernetKey() {
     Pointer<Utf8> strPtr = _getFernetKey();
     String str = strPtr.toDartString();
-    log(str);
+
+    return str;
+  }
+
+  static String getCertificatePassword() {
+    Pointer<Utf8> strPtr = _getCertificatePassword();
+    String str = strPtr.toDartString();
 
     return str;
   }
