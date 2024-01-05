@@ -32,7 +32,7 @@ Both the methods are explained in detail below.
 - **base64String** (String), and
 - **size** (String). 
 The database should look like this.
-![Firestore database]()
+![Firestore database](https://github.com/SahilDShaw/m-vahan-app/blob/main/media/firebase-database.png?raw=true)
 4) Configure the project by following the steps mentioned in [this](https://www.youtube.com/watch?v=FkFvQ0SaT1I) video.
 
 #### Integrate APIs for your own backend
@@ -60,7 +60,7 @@ If you are facing some errors, kindly follow the steps mentioned again. If the p
 After the app builds successfully, a ```Sign In screen``` appears in the emulator as shown.
 
 #### Sign In Screen
-![Sign In Screen]()
+![Sign In Screen](https://github.com/SahilDShaw/m-vahan-app/blob/main/media/sign-in-screen.jpg?raw=true)
 The ```Sign In Screen``` consists of 
 - **App logo**, 
 - **3 text-fields with validation** (User Id, Password, and Captcha), 
@@ -71,7 +71,7 @@ The ```Sign In Screen``` consists of
 This screen also contains a floating navigation button which takes the user to the ```List screen```. This button was added because there was no access available to the authentication APIs during the development of the project and hence the APIs were **NOT** integrated.
 
 #### List Screen
-![List Screen]()
+![List Screen](https://github.com/SahilDShaw/m-vahan-app/blob/main/media/list-screen.jpg?raw=true)
 The ```List Screen``` consists of 
 - **App logo**, 
 - **Menu button**, and
@@ -79,14 +79,14 @@ The ```List Screen``` consists of
 The List items navigate to their respective screens.
 
 #### QR Scanner Screen
-![QR Scanner Screen]()
+![QR Scanner Screen](https://github.com/SahilDShaw/m-vahan-app/blob/main/media/qr-scanner-screen.jpg?raw=true)
 The ```QR Scanner Screen``` consists of
 - **QR Scanner**,
 - **```Scan a Valid Code``` text**
 The QR Scanner scans for a ```Valid QR``` and automatically navigates to the ```Generate PDF Screen```.
 
 #### Generate PDF Screen
-![Generate PDF Screen]()
+![Generate PDF Screen](https://github.com/SahilDShaw/m-vahan-app/blob/main/media/generate-pdf-screen.jpg?raw=true)
 The ```Generate PDF Screen``` consists of
 - **Driver/Vehicle Details**,
 - **```Generate PDF``` button**,
@@ -96,7 +96,7 @@ The ```Upload PDF``` button uploads the PDF as a ```base64String``` to the ```Fi
 After the pdf is successfully uploaded, a ```SnackBar``` displaying the ```document id``` of the PDF is shown.
 
 #### Download PDF Screen
-![Download PDF Screen]()
+![Download PDF Screen](https://github.com/SahilDShaw/m-vahan-app/blob/main/media/download-pdf-screen.jpg?raw=true)
 The ```Download PDF Screen``` displays a list of all the documents uploaded to the database with option to download and display the each PDF.
 ### What does ```Valid QR``` Mean?
 The app handles 2 types of data models - Driver details and Vehicle Details. The data in each model can be represented as key-value pairs. Examples are as follows:\
@@ -147,9 +147,9 @@ gAAAAABlk6cnFffpoZ/vOJTV5VoUspNmGLW3VoTfcTS15TbDD1edsY4HwsOcCC0Yxc86UrUckXrTqkYN
 After the encryption, the encrypted ```String``` found so far converted into a ```QR Code using``` a standard ```QR Code Generator```.\
 This QR generated so far is considered as a ```Valid QR``` for this app. The Valid QRs for the above mentioned example data models is as follows:\
 Driver Details Valid QR
-![Driver Details Valid QR]()
+![Driver Details Valid QR](https://github.com/SahilDShaw/m-vahan-app/blob/main/media/valid-qr-driver-details.png?raw=true)
 Vehicle Details Valid QR
-![Vehicle Details Valid QR]()
+![Vehicle Details Valid QR](https://github.com/SahilDShaw/m-vahan-app/blob/main/media/valid-qr-vehicle-details.png?raw=true)
 ### Modifying the Digital Signature
 
 All the PDFs generated on the app have a digital signature.\
@@ -203,4 +203,4 @@ Now, you are good to go.
 
 ## License
 
-[MIT]() © Sahil Shah
+[MIT](https://github.com/SahilDShaw/m-vahan-app/blob/main/LICENSE) © Sahil Shah
