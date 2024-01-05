@@ -184,6 +184,8 @@ Next, openssl will ask us for some identity information to generate the certific
 - The common name (or domain name)
 - The email address
 
+Update the values for these fields in the ```constants.dart``` file in ```lib/shared``` folder.
+
 **Creating PFX using OpenSSL**
 ```bash
 openssl pkcs12 -export -in ca-cert.pem -inkey ca-key.pem -out certificate.pfx
