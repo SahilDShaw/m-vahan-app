@@ -146,7 +146,7 @@ class _GeneratePDFScreenState extends State<GeneratePDFScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('PDF Uploader'),
+        title: const Text('Generate PDF'),
       ),
       body: Center(
         child: ListView(

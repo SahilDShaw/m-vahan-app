@@ -1,3 +1,22 @@
-{"qr_type": "driver","data": {"dl_no": "12345678","name": "Sahil Shah","address": "NIC, CGO Complex, JLN Stadium, Delhi","dob": "20020922"}}
+{
+    "qr_type": "driver",
+    "data": {
+        "dl_no": "12345678",
+        "name": "Sahil Shah",
+        "address": "NIC, CGO Complex, JLN Stadium, Delhi",
+        "dob": "20020922"
+    }
+}
 
-{"qr_type": "vehicle","data": {"vehicle_no": "DL12ABCD3456","manufacturer": "Tata Motors","model": "Altroz","variant": "XZ","age": 5,"kms_driven": 30000,"reg_city": "Delhi"}}
+{
+    "qr_type": "vehicle",
+    "data": {
+        "vehicle_no": "DL12ABCD3456",
+        "manufacturer": "Tata Motors",
+        "model": "Altroz",
+        "variant": "XZ",
+        "age": 5,
+        "kms_driven": 30000,
+        "reg_city": "Delhi"
+    }
+}
